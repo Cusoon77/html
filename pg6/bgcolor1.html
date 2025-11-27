@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>js1</title>
+</head>
+<body>
+<center>
+<h1>JAVA SCRIPT EVENT HANDLING</h1>
+<p> click on button to change the background colour</p>
+<button onclick="changeColor()">change color</button>
+<script>
+function  changeColor(){ 
+const colors = ["red","green","blue","pink","yellow","purple"];
+const randomcolor = colors[Math.floor(Math.random()*colors.length)];
+document.body.style.backgroundColor = randomcolor;}
+
+</script>
+</body>
+</html>

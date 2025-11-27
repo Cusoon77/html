@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Calendar</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+    }
+    table {
+      border-collapse: collapse;
+      margin: 20px auto;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      width: 60px;
+      height: 40px;
+    }
+    th {
+      background: yellow;
+    }
+    .sunday {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h2>Calendar</h2>
+
+  <label>Year:
+    <input id="year" type="number" placeholder="2025">
+  </label>
+  <label>Month:
+    <input id="month" type="number" placeholder="11">
+  </label>
+
+  <button onclick="makeCalendar()">Generate</button>
+
+  <div id="calendar"></div>
+
+  <script>
+    function makeCalendar() {
+      let year = +document.getElementById("year").value;
+      let month = +document.getElementById("month").value - 1;
+      if (!year || month < 0 || month > 11) {
+        alert("Please enter a valid year and month (1–12).");
+        return;
+      }
+      let days = new Date(year, month + 1, 0).getDate();
+      let firstDay = new Date(year, month, 1).getDay();
+      let html = "<table><tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr><tr>";
+
+      for (let i = 0; i < firstDay; i++) {
+        html += "<td></td>";
+      }
+      for (let d = 1; d <= days; d++) {
+        let dayOfWeek = (firstDay + d - 1) % 7;
+        let className = dayOfWeek === 0 ? "sunday" : "";
+        html += `<td class="${className}">${d}</td>`;
+        if (dayOfWeek === 6 && d !== days) {
+          html += "</tr><tr>";
+        }
+      }
+
+      html += "</tr></table>";
+      document.getElementById("calendar").innerHTML = html;
+    }
+  </script>
+</body>
+</html>
+

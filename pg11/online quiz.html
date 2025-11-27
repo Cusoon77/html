@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Online Quiz</title>
+<style>
+h2 {
+  text-align: center;
+  color: black;
+}
+form {
+  background-color: pink;
+  padding: 15px;
+  width: 400px;
+  margin: auto;
+  border-radius: 8px;
+}
+p {
+  font-weight: bold;
+}
+#result {
+  font-weight: bold;
+  color: darkblue;
+  margin-top: 15px;
+  text-align: center;
+}
+input[type="submit"] {
+  background-color: purple;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: blue;
+}
+</style>
+</head>
+<body>
+<h2>Online Quiz</h2>
+<form id="quizForm" onsubmit="return checkAnswers()">
+  <p>1). Who is the CEO of Google?</p>
+  <input type="radio" name="q1" value="sundar"> Sundar Pichai<br>
+  <input type="radio" name="q1" value="elon"> Elon Musk<br>
+  <input type="radio" name="q1" value="bill"> Bill Gates<br>
+  <input type="radio" name="q1" value="mark"> Mark Zuckerberg<br>
+
+  <p>2). What is the full form of HTML?</p>
+  <input type="radio" name="q2" value="correct"> HyperText Markup Language<br>
+  <input type="radio" name="q2" value="wrong1"> HyperText Makeup Language<br>
+  <input type="radio" name="q2" value="wrong2"> Hyper Markup Language<br>
+  <input type="radio" name="q2" value="wrong3"> Hypertext Markp Languaage<br>
+
+  <p>3). What is the full form of CSS?</p>
+  <input type="radio" name="q3" value="correct"> Cascading Style Sheet<br>
+  <input type="radio" name="q3" value="wrong1"> Cascading Sheet Style<br>
+  <input type="radio" name="q3" value="wrong2"> Cesceding Style Sheet<br>
+  <input type="radio" name="q3" value="wrong3"> Cascading Stying Sheet<br>
+
+  <br>
+  <input type="submit" value="Submit">
+</form>
+
+<p id="result"></p>
+
+<script>
+function checkAnswers() {
+  let score = 0;
+
+  // Correct answers
+  const answers = {
+    q1: "sundar",
+    q2: "correct",
+    q3: "correct"
+  };
+
+  // Check answers
+  for (let key in answers) {
+    const options = document.getElementsByName(key);
+    for (let i = 0; i < options.length; i++) {
+      if (options[i].checked && options[i].value === answers[key]) {
+        score++;
+      }
+    }
+  }
+
+  document.getElementById("result").innerHTML = "Your Score: " + score + "/3";
+  return false; // Prevent form submission / page reload
+}
+</script>
+</body>
+</html>
+
