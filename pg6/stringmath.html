@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>JavaScript</title>
+<style>
+        body {
+            margin: 40px;
+            background-color: #f3f6fa;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        h2 {
+            color: #34495e;
+        }
+        .section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+       
+    </style>
+</head>
+<body>
+<h1>string and math object functions in JavaScript</h1>
+
+<div class="section">
+    <h2>string object function</h2>
+    <p id="string"></p>
+</div>
+
+<div class="section">
+    <h2>math object function</h2>
+    <p id="math"></p>
+</div>
+
+<script>
+        let text = "JavaScript program";
+        let stringResult = "";
+
+        stringResult += "<b>Original String:</b> " + text + "<br>";
+        stringResult += "Length: " + text.length + "<br>";
+        stringResult += "Uppercase: " + text.toUpperCase() + "<br>";
+        stringResult += "Lowercase: " + text.toLowerCase() + "<br>";
+        stringResult += "Index of 'program': " + text.indexOf("program") + "<br>";
+        document.getElementById("string").innerHTML = stringResult;
+
+
+          let number = 25.75;
+        let mathResult = "";
+
+        mathResult += "Original Number:" + number + "<br>";
+        mathResult += "Round: " + Math.round(number) + "<br>";
+        mathResult += "Square Root: " + Math.sqrt(25) + "<br>";
+        mathResult += "Power (2^3): " + Math.pow(2, 3) + "<br>";
+        mathResult += "Max(3,7,9): " + Math.max(3,7,9) + "<br>";
+        mathResult += "Min(3,7,9): " + Math.min(3,7,9) + "<br>";
+
+        document.getElementById("math").innerHTML = mathResult;
+
+</script>
+
+</body>
+</html>

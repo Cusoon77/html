@@ -1,28 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-<title>JS Event Handling</title>
+<title>form</title>
 </head>
-<body>
-
-<h1 style="text-align:center;">JAVA SCRIPT EVENT HANDLING</h1>
-<p style="text-align:center;">Click the button to change the background color</p>
-
+<body bgcolor="pink">
+<h1><center>REGISTRATION FORM</center></h1>
+<form>
 <center>
-<button onclick="changeColor()">Change Color</button>
+<label>Name</label>
+<input type="text" name="name"><br><br>
+<label>mobile number</label>
+<input type="number" name="number"><br><br>
+<label>Email id</label>
+<input type="email" name="email"><br><br>
+<label>gender</label>
+<input type="radio" name="gender value="male">male
+<input type="radio" name="gender value="female">female
+<input type="radio" name="gender value="others">others<br>
+<label>date of birth</label>
+<input type="date" name="dob"><br><br>
+<label>Adress</label>
+<input type="textarea" row="4" col="30" name="adress"><br><br>
+<label> current stydy</label>
+<select>
+<option>btech</option>
+<option>mca</option>
+<option>dipolma</option>
+</select><br>
+<label>Department</label>
+<select>
+<option>CS</option>
+<option>IT</option>
+</select><br>
+<label>upload CV</label>
+<input type="file"><br>
+<label>programming language</label>
+<input type="checkbox" value="html">html
+<input type="checkbox" value="CSS">css
+<input type="checkbox" value="Flutter">flutter
+<br>
+<label>language</label>
+<input type="checkbox" value="English">english
+<input type="checkbox" value="malayalam">malayalam
+<input type="checkbox" value="hindi">hindi<br>
+<input type="submit" value="submit"><br>
+<input type="reset" value="reset">
+<br>
+<br>
 </center>
-
-<script>
-function changeColor() {
-
-    var colors = ["red", "green", "blue", "pink", "yellow", "purple"];
-    
-    var randomColor = colors[Math.floor(Math.random() * colors.length)];
-    
-    document.body.style.backgroundColor = randomColor;
-}
-</script>
-
+</form>
 </body>
 </html>
-
